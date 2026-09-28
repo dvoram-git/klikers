@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>קליקרים | מסך הקרנה</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="admin-panel panel">
+        <div class="panel-header">
+          <span class="badge">לוח ניהול</span>
+          <h2>מנחה</h2>
+        </div>
+
+        <div class="admin-actions">
+          <button id="start-game-btn" class="primary">התחל משחק</button>
+          <button id="next-question-btn" class="secondary">שאלה הבאה</button>
+          <button id="show-results-btn" class="warning">הצג תוצאות</button>
+          <button id="reset-game-btn" class="danger">אפס משחק</button>
+        </div>
+
+        <div class="status-box">
+          <p class="label">מצב נוכחי</p>
+          <h3 id="phase-label">ממתין</h3>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span>משתתפים</span>
+            <strong id="participants-count">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>ענו</span>
+            <strong id="answered-count">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>זמן</span>
+            <strong id="time-left">0</strong>
+          </div>
+        </div>
+
+        <div class="leaderboard-box">
+          <p class="label">לוח תוצאות</p>
+          <ol id="leaderboard-list"></ol>
+        </div>
+      </aside>
+
+      <main class="screen-panel panel">
+        <div id="screen-content"></div>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
